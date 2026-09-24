@@ -67,4 +67,4 @@ Admin requests send `Authorization: Bearer <token>`.
 cd frontend && npm run build   # outputs frontend/dist
 ```
 
-If the frontend and API are hosted on different domains, build with `VITE_API_URL=https://your-api.example.com/api` and set `CLIENT_URL` in the backend `.env` to the site's URL (comma-separate multiple origins).
+Production builds call the deployed API at `https://ambalangoda-travels.onrender.com/api` (set in `frontend/src/api.js`; override with `VITE_API_URL`). On Render, set the backend's `CLIENT_URL` environment variable to the frontend's URL, otherwise the browser blocks requests (CORS). Comma-separate multiple origins, e.g. `https://your-site.vercel.app,http://localhost:5173`.

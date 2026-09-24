@@ -1,4 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_URL || '/api'
+// Dev uses the Vite proxy (/api -> local backend); production builds call the deployed API.
+// Set VITE_API_URL to override either.
+const PRODUCTION_API = 'https://ambalangoda-travels.onrender.com/api'
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '/api' : PRODUCTION_API)
 const TOKEN_KEY = 'amb_admin_token'
 
 export function getToken() {
