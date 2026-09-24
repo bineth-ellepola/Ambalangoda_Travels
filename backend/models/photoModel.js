@@ -6,6 +6,13 @@ const photoSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        imageId: {
+            type: String,
+        },
+        caption: {
+            type: String,
+            default: '',
+        },
     },
     {
         timestamps: true,
